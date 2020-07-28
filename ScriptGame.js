@@ -2,9 +2,9 @@ function jogo(fase) {
 	console.log(fase);
 
 	if (fase === 1){
-		numAdvinha = prompt("vou pensar em um número de 1 á:")
 		
-		//apenas algumas brincadeiras para ficar mais divertido.
+		numAdvinha = prompt("numero:");
+
 		if (isNaN(numAdvinha)){
 			alert("apenas números.");
 			window.location.assign("game.html");
@@ -22,15 +22,20 @@ function jogo(fase) {
 		else {
 			alert("hmm... um oponente a altura!");
 		}
+
 	}
-	
+	//else if (fase === 2){
+	//	mense.innerHTML = "bora lá...";
+	//	number = Math.floor(Math.random()*numAdvinha)+1
+	//}
 	else if (fase === 2){
 		mense.innerHTML = "tente advinhar o número!";
 		document.querySelector('#next').innerHTML = "Proximo";
-		document.querySelector('h1').style.display="none";
 		
+
 		number = Math.floor(Math.random()*numAdvinha)+1 //para gerar o número aleatório
-		
+
+		document.querySelector('h1').style.display="none";
 		entrada.setAttribute("style","display:block;");
 		entrada.value=null;
 		tentativas.style.marginTop="3%";
