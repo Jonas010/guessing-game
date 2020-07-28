@@ -2,7 +2,7 @@ function jogo(fase) {
 	console.log(fase);
 
 	if (fase === 1){
-		NumAdvinha = prompt("vou pensar em um número de 1 á:")
+		numAdvinha = prompt("vou pensar em um número de 1 á:")
 		
 		//apenas algumas brincadeiras para ficar mais divertido.
 		if (isNaN(numAdvinha)){
@@ -58,7 +58,7 @@ function jogo(fase) {
 
 var fase =0;
 var number;
-var NumAdvinha;
+var numAdvinha;
 let entrada = document.querySelector('input');
 var tentativas = document.querySelector('h2'); // mostra o numero de tentativas a partir da fase 4
 let mense = document.getElementById('msg'); //mensagem de se errou ou acertou
