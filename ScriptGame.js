@@ -7,11 +7,11 @@ function jogo(fase) {
 
 		if (isNaN(numAdvinha)){
 			alert("apenas números.");
-			window.location.assign("index.html");
+			window.location.assign("jonas010.github.io/jogo-de-advinhar/");
 		}
 		else if (numAdvinha == null) {
 			alert("tente outra vez.");
-			window.location.assign("index.html")
+			window.location.assign("jonas010.github.io/jogo-de-advinhar/")
 		}
 		else if (numAdvinha <= 12) {
 			alert("Está testando o jogo?");
