@@ -48,7 +48,7 @@ function game(level) {
 
 		if (Try == number) {
 			entrada.style.display="none";
-			mense.innerHTML = "acertou!";
+			mense.innerHTML = "you got it!";
 			mense.style.color = "green";
 			next.style.display="none";
 			document.querySelector('a').style.display="block";
