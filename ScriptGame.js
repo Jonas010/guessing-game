@@ -1,75 +1,76 @@
-function jogo(fase) {
-	console.log(fase);
+function game(level) {
+	console.log(level);
 
-	if (fase === 1){
+	if (level === 1){
 		
-		numAdvinha = prompt("numero:");
+		GuessNum = prompt("Guess from 1 to:");
 
-		if (isNaN(numAdvinha)){
-			alert("apenas números.");
+		if (isNaN(GuessNum)){
+			alert("Just numbers.");
 			window.location.assign("index.html");
 		}
-		else if (numAdvinha == null) {
-			alert("tente outra vez.");
+		else if (GuessNum == null) {
+			alert("Try again.");
 			window.location.assign("index.html")
 		}
-		else if (numAdvinha <= 12) {
-			alert("Está testando o jogo?");
+		else if (GuessNum <= 12) {
+			alert("Are you testing the game?");
 		}
-		else if (numAdvinha <= 100) {
-			alert("Você tem coragem.");
+		else if (GuessNum <= 100) {
+			alert("you have courage.");
 		}
 		else {
-			alert("hmm... um oponente a altura!");
+			alert("hmm... i'll have fun!");
 		}
 
 	}
-	//else if (fase === 2){
-	//	mense.innerHTML = "bora lá...";
-	//	number = Math.floor(Math.random()*numAdvinha)+1
+	//else if (level === 2){
+	//	mense.innerHTML = "let's go...";
+	//	number = Math.floor(Math.random()*GuessNum)+1
 	//}
-	else if (fase === 2){
-		mense.innerHTML = "tente advinhar o número!";
-		document.querySelector('#next').innerHTML = "Proximo";
+	
+	else if (level === 2){
+		mense.innerHTML = "Try guess the number!";
+		document.querySelector('#next').innerHTML = "Next";
 		
 
-		number = Math.floor(Math.random()*numAdvinha)+1 //para gerar o número aleatório
+		number = Math.floor(Math.random()*GuessNum)+1 //to generate the random number
 
 		document.querySelector('h1').style.display="none";
 		entrada.setAttribute("style","display:block;");
 		entrada.value=null;
-		tentativas.style.marginTop="3%";
+		att.style.marginTop="3%";
 		
 	}
 	else {
-		var tenta = document.getElementById('entrada').value;
-		tentativas.innerHTML = fase-2;
+		var Try = document.getElementById('entrada').value;
+		att.innerHTML = level-2;
 
-		if (tenta == number) {
+		if (Try == number) {
 			entrada.style.display="none";
 			mense.innerHTML = "acertou!";
 			mense.style.color = "green";
 			next.style.display="none";
 			document.querySelector('a').style.display="block";
 		}
-		else if (tenta > number) {
-			mense.innerHTML = "menor";
+		else if (Try > number) {
+			mense.innerHTML = "smaller";
 		}
-		else if (tenta < number) {
-			mense.innerHTML = "maior";
+		else if (Try < number) {
+			mense.innerHTML = "bigger";
 		}
 	}
 }
 
-var fase =0;
+var level =0;
 var number;
-var numAdvinha;
+var GuessNum;
 let entrada = document.querySelector('input');
-var tentativas = document.querySelector('h2'); // mostra o numero de tentativas a partir da fase 4
-let mense = document.getElementById('msg'); //mensagem de se errou ou acertou
-let next = document.querySelector("#next"); //botao pra mudar faze
+var att = document.querySelector('h2'); // show the attempts number at the level 4
+let mense = document.getElementById('msg'); //wrong or right mensaje
+let next = document.querySelector("#next"); //button to next level
 
 next.addEventListener("click",function(){
-	fase = fase+1;
-	jogo(fase);
+	level = level+1;
+	game(level);
 });
